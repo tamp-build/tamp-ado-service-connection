@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <RootNamespace>Tamp.AdoServiceConnection.V1</RootNamespace>
+    <AssemblyName>Tamp.AdoServiceConnection.V1</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <PackageId>Tamp.AdoServiceConnection.V1</PackageId>
+    <Description>Tamp composition wrapper for end-to-end Azure DevOps service-connection creation. Orchestrates az + ADO REST: create Entra app, create service principal, grant scope role, create ADO service endpoint, wire up the federated credential. Workload Identity Federation only (no SPN-secret path) by design — modern, no rotation, no secret to leak.</Description>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(TampCorePath)" Condition="'$(TampCoreMode)' == 'project'" />
+    <PackageReference Include="Tamp.Core" Condition="'$(TampCoreMode)' == 'package'" />
+    <ProjectReference Include="$(TampAzureCliPath)" Condition="'$(TampAzureCliMode)' == 'project'" />
+    <PackageReference Include="Tamp.AzureCli.V2" Condition="'$(TampAzureCliMode)' == 'package'" />
+    <ProjectReference Include="$(TampAdoRestPath)" Condition="'$(TampAdoRestMode)' == 'project'" />
+    <PackageReference Include="Tamp.AdoRest.V7" Condition="'$(TampAdoRestMode)' == 'package'" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
