@@ -21,7 +21,7 @@
     <PackageVersion Include="Tamp.Core" Version="1.2.0" />
     <PackageVersion Include="Tamp.NetCli.V10" Version="1.2.0" />
     <PackageVersion Include="Tamp.SonarScanner.V10" Version="0.1.0" />
-    <PackageVersion Include="Tamp.Http" Version="1.2.0" />
+    <PackageVersion Include="Tamp.Http" Version="0.1.1" />
     <PackageVersion Include="Tamp.AzureCli.V2" Version="0.1.0" />
     <PackageVersion Include="Tamp.AdoRest.V7" Version="0.1.0" />
   </ItemGroup>
